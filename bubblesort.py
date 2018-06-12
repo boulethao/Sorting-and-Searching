@@ -6,7 +6,14 @@
 # At the 1st iteration, the smallest element is allocated at the beginning of the array,
 # At the 2nd one at the next index, and so on.
 
+# Time complexity:
+#   best: O(n) if nearly sorted
+#   average: O(n^2)
+#   worst: O(n^2)
 
+# Space complexity: O(1)
+
+# Stable? Yes
 
 def bubblesort(arr):
     """

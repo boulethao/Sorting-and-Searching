@@ -6,6 +6,16 @@
 # Every shift to the right will create a "hole" at the original index.
 # When there are no bigger elements left, insert the key into the hole.
 
+# Time complexity:
+#   Best: O(n) if nearly sorted
+#   Average: O(n^2)
+#   Worst: O(n^2)
+#   N.B.: Low overhead (Bubble sort has big overhead through swapping)
+
+# Space complexity: O(1)
+
+# Stable? Yes
+
 
 def insertionsort(arr):
     """
