@@ -16,6 +16,8 @@
 
 # Stable? Yes
 
+# N.B. Insertion sort is good when array is small and used when
+
 
 def insertionsort(arr):
     """

@@ -9,7 +9,7 @@
 # Time complexity:
 #   best: O(n) if nearly sorted
 #   average: O(n^2)
-#   worst: O(n^2)
+#   worst: O(n^2) when array is reversed
 
 # Space complexity: O(1)
 
