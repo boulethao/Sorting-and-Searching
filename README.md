@@ -32,8 +32,8 @@ Pivot is always the smallest (or the biggest) element in the array.
 <img src="./quicksort/images/quicksort-bigO-worstcase.png" 
 alt="Quick sort worst case analysis" width="70%" height="70%" border="10" /></a>
 
-<small>__N.B. in the arithmetic series, we are substracting "1" because we are not partitioning when input has only one
-element.__</small>
+*N.B. in the arithmetic series, we are substracting "1" because we are not partitioning when input has only one
+element.*
 
 ##### 2. Average case: O(n log(n))
 
@@ -44,7 +44,7 @@ more or less 3n/4 elements (minus the pivot).
 alt="Quick sort worst case analysis" width="70%" height="70%" border="10" /></a>
 
 At each level of the stack, there are most of the time __n__ nodes. Towards the end, we have less than __n__ nodes. 
-In average, we can say the time we spend on partitioning is at most __cn__. 
+The time we spend on partitioning is at most __cn__. 
 
 
 
@@ -57,7 +57,7 @@ at most 1 element).
 alt="Quick sort worst case analysis" width="70%" height="70%" border="10" /></a>
 
 At each level of the stack, there are __n__ nodes or less. 
-In average, we can say the time we spend on partitioning is at most __cn__. 
+The time we spend on partitioning is at most __cn__. 
 
 
 
