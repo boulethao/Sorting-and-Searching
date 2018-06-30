@@ -25,15 +25,40 @@ during the "divide" procedure.
 
 The time complexity of quick sort depends on how we choose the pivot. There are three scenarios:
 
-##### 1. __WORST CASE__: Pivot is always the smallest (or the biggest) element in the array
+##### 1. Worst case: O(n<sup>2</sup>)
 
-![Quick sort worst case analysis](./quicksort/images/quicksort-bigO-worstcase.png)
+Pivot is always the smallest (or the biggest) element in the array.
 
+<img src="./quicksort/images/quicksort-bigO-worstcase.png" 
+alt="Quick sort worst case analysis" width="70%" height="70%" border="10" /></a>
 
-2. Pivot is chosen so the left partition has more or less n/4 elements (minus the pivot) and the right partition has 
+<small>__N.B. in the arithmetic series, we are substracting "1" because we are not partitioning when input has only one
+element.__</small>
+
+##### 2. Average case: O(n log(n))
+
+Pivot is chosen so the left partition has more or less n/4 elements (minus the pivot) and the right partition has 
 more or less 3n/4 elements (minus the pivot).
-3. Pivot is always chosen as the middle value. The left and right partition are equally balanced (or have a difference of 
+
+<img src="./quicksort/images/quicksort-bigO-worstcase.png" 
+alt="Quick sort worst case analysis" width="70%" height="70%" border="10" /></a>
+
+At each level of the stack, there are most of the time __n__ nodes. Towards the end, we have less than __n__ nodes. 
+In average, we can say the time we spend on partitioning is at most __cn__. 
+
+
+
+##### 3. Best case: O(n log(n))
+
+Pivot is always chosen as the middle value. The left and right partition are equally balanced (or have a difference of 
 at most 1 element).
+
+<img src="./quicksort/images/quicksort-bigO-bestcase.png" 
+alt="Quick sort worst case analysis" width="70%" height="70%" border="10" /></a>
+
+At each level of the stack, there are __n__ nodes or less. 
+In average, we can say the time we spend on partitioning is at most __cn__. 
+
 
 
 
