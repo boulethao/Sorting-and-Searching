@@ -41,7 +41,7 @@ Pivot is chosen so the left partition has more or less n/4 elements (minus the p
 more or less 3n/4 elements (minus the pivot).
 
 <img src="./quicksort/images/quicksort-bigO-worstcase.png" 
-alt="Quick sort worst case analysis" width="70%" height="70%" border="10" /></a>
+alt="Quick sort average case analysis" width="70%" height="70%" border="10" /></a>
 
 At each level of the stack, there are most of the time __n__ nodes. Towards the end, we have less than __n__ nodes. 
 The time we spend on partitioning is at most __cn__. 
@@ -54,10 +54,18 @@ Pivot is always chosen as the middle value. The left and right partition are equ
 at most 1 element).
 
 <img src="./quicksort/images/quicksort-bigO-bestcase.png" 
-alt="Quick sort worst case analysis" width="70%" height="70%" border="10" /></a>
+alt="Quick sort best case analysis" width="70%" height="70%" border="10" /></a>
 
 At each level of the stack, there are __n__ nodes or less. 
 The time we spend on partitioning is at most __cn__. 
+
+
+### Pivot choice
+
+##### First/Last element
+
+The most common way (I think) is either choose the first or the last element in the array.
+The problem with this method is we could end up with O(n<sup>2</sup>) if the array is nearly sorted.
 
 
 
