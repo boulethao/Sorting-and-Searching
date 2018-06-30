@@ -24,9 +24,11 @@ during the "divide" procedure.
 ### Time complexity
 
 The time complexity of quick sort depends on how we choose the pivot. There are three scenarios:
-#####1. __WORST CASE__: Pivot is always the smallest (or the biggest) element in the array
 
-![alt text](./quicksort/images/quicksort-bigO-worstcase.png)
+##### 1. __WORST CASE__: Pivot is always the smallest (or the biggest) element in the array
+
+![Quick sort worst case analysis](./quicksort/images/quicksort-bigO-worstcase.png)
+
 
 2. Pivot is chosen so the left partition has more or less n/4 elements (minus the pivot) and the right partition has 
 more or less 3n/4 elements (minus the pivot).
