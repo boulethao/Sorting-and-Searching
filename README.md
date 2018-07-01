@@ -67,6 +67,12 @@ The time we spend on partitioning is at most __cn__.
 The most common way (I think) is either choose the first or the last element in the array.
 The problem with this method is we could end up with O(n<sup>2</sup>) if the array is nearly sorted.
 
+Here are more details on using this method:
+
+1. [Using the first element as a pivot](./quicksort/README.md#partitioning-with-first-element-as-pivot)
+
+2. [Using the last element as a pivot](./quicksort/README.md#partitioning-with-last-element-as-pivot)
+
 
 
 
