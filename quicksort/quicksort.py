@@ -129,6 +129,7 @@ def quicksort_last(arr):
     if arr is None or len(arr) <= 1:
         return
 
+    _quicksort_last(arr, 0, len(arr)-1)
 
 def _quicksort_last(arr, lo, hi):
     """
@@ -150,9 +151,47 @@ def _quicksort_last(arr, lo, hi):
     if lo >= hi:
         return
 
+    # Find the position of the pivot
+    p = partition_last_element(arr, lo, hi)
+
+    # Recursively call this method on the left partition and on the right partition (without the pivot)
+    _quicksort_last(arr, lo, p-1)
+    _quicksort_last(arr, p+1, hi)
+
 
 def partition_last_element(arr, lo, hi):
+    """
+    Partition the array by choosing the last element as a pivot.
+
+    :param arr: The array of integers to partition
+    :param lo: The lower boundary of the array
+    :param hi: The higher boundary of the array
+
+    :return:
+    """
+
     pivot = arr[hi]
+
+    index = lo  # index cursor that walks through the array and compare all elements with the pivot
+    p = lo - 1  # boundary position for all elements that are smaller than the pivot
+
+    while index < hi:
+        if arr[index] < pivot:
+            # increase the boundary so we can set the element within the boundary
+            p += 1
+            arr[index], arr[p] = arr[p], arr[index]
+
+        index += 1
+
+    #when done, place the pivot right after the boundary of "< pivot"
+    p += 1
+    arr[hi], arr[p] = arr[p], arr[hi]
+
+    # return the final position of the pivot
+    return p
+
+
+
 
 
 
@@ -162,5 +201,10 @@ def partition_last_element(arr, lo, hi):
 arr = [5, 2, 6, 1, 3, 4]
 print("Quicksort %s with first element as a pivot" % arr)
 quicksort_first(arr)
+print("=> %s" % arr)
+
+arr = [5, 2, 6, 1, 3, 4]
+print("Quicksort %s with last element as a pivot" % arr)
+quicksort_last(arr)
 print("=> %s" % arr)
 
