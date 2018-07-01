@@ -64,7 +64,7 @@ The time we spend on partitioning is at most __cn__.
 
 ##### First/Last element
 
-The most common way (I think) is either choose the first or the last element in the array.
+One of the easiest way of choosing a pivot is either picking the first or the last element in the array.
 The problem with this method is we could end up with O(n<sup>2</sup>) if the array is nearly sorted.
 
 Here are more details on using this method:
@@ -73,6 +73,10 @@ Here are more details on using this method:
 
 2. [Using the last element as a pivot](./quicksort/README.md#partitioning-with-last-element-as-pivot)
 
+
+##### Random element
+
+Choosing a random element as a pivot decrease the chance of getting O(n<sup>2</sup>). 
 
 
 
