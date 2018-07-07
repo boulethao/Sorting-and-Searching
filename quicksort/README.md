@@ -155,7 +155,7 @@ partitioning algorithm.
 The algorithm divides the array into chunks of 5 elements and pick the median of each of them.
 
 From the list of these medians, we calculate the median of all medians and use it as a pivot with the quick select 
-approach to find the kth smallest (or largest) element in the array.
+approach to find the kth largest element in the array.
 
 The selection of the pivot runs in __O(n)__.
 For more information on median of medians: 
