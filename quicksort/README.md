@@ -241,7 +241,7 @@ Example of code: [median_of_medians.py](./median_of_medians.py)
 
 
 
-## Features
+## Attributes
 
 #### Parallelizable
 
@@ -249,7 +249,7 @@ The mechanics of quick sort is to divide the list into two partitions and recurs
 
 Due to the nature of this mechanics, it is possible to quick sort the left partition on a new child process and to quick sort the right partition on another process concurrently.
 
-#### Extendable to k-way distribution sort
+#### Extendable to k-way distribution sort (k number of processors)
 
 Quick sort can be distributed into two sub-tasks (quick sort left and right partitions) but can be also be distributed into three sub-tasks (or even more). 
 
@@ -268,6 +268,18 @@ alt="K-Ways Partitioning" width="70%" height="70%" />
 #### Memory access not sequential
 
 While partitioning, quick sort swaps elements that are not sequentially allocated inside the memory.
+
+## Additional notes
+*Why is quick sort the chosen algorithm for standard libraries?*
+
+* Faster in average compared to other algorithms
+    - Bubble, insertion, selection sort have an average runtime of O(n<sup>2</sup>).
+    - Quick sort worst case runtime doesn't happen often in practice.
+    - Although heap sort worst case runtime is O(n logn), quick sort is better in practice (average) because it uses lower constant factors than heap sort. Maintaining a heap in heap sort is expensive.    
+    - Merge sort worst case runtime is O(n logn) but also uses an auxiliary space which requires higher constant factors for allocation and de-allocation of memory.
+* Good cache locality
+    - Merge sort requires additional auxiliary space while quick sort runs in-place which is cache friendly.
+    - Even if the array for quick sort doesn't fit into cache at the beginning, after several recursion, the smaller sections of the array will fit into cache eventually.
 
 
 
