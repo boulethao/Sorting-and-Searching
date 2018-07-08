@@ -107,7 +107,7 @@ def partition(arr, lo, hi):
 ```
 
 <img src="./images/quicksort-1stelement-pivot.png"
-alt="Partitioning with first element as pivot" width="70%" height="70%" border="10" /></a>
+alt="Partitioning with first element as pivot" width="70%" height="70%" />
 
 
 
@@ -141,7 +141,7 @@ def partition(arr, lo, hi):
     
 ```
 <img src="./images/quicksort-lastelement-pivot.png"
-alt="Partitioning with last element as pivot" width="70%" height="70%" border="10" /></a>
+alt="Partitioning with last element as pivot" width="70%" height="70%" />
 
 
 #### Picking a random element as a pivot
@@ -208,7 +208,7 @@ There are at most 6 comparisons in total. We can do better with some more mathem
 
 Below is the proof that we can reduce the amount of comparison to 3 (or less):
 
-<img src="./images/medianofthree.png" alt="Median of Three mathematical proof" width="70%" height="70%" border="10">
+<img src="./images/medianofthree.png" alt="Median of Three mathematical proof" width="70%" height="70%" />
 
 
 #### Picking the median of medians
@@ -234,7 +234,7 @@ For more information on median of medians:
 [https://en.wikipedia.org/wiki/Median_of_medians](https://en.wikipedia.org/wiki/Median_of_medians).
 
 <img src="./images/medianofmedians.png"
-alt="Median of medians" width="70%" height="70%" border="10" /></a>
+alt="Median of medians" width="70%" height="70%" />
 
 Example of code: [median_of_medians.py](./median_of_medians.py)
 
