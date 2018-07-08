@@ -1,7 +1,7 @@
 # Sorting-and-Searching
 Highlights on sorting and search algorithms
 
-#### Quick sort
+#### [Quick sort](./quicksort)
 1. Mechanics
     - Divide and conquer
     - Partition around a pivot
