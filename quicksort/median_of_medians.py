@@ -1,5 +1,5 @@
 # MEDIAN OF MEDIANS
-
+# Reference: https://brilliant.org/wiki/median-finding-algorithm/
 
 def median_of_medians(arr):
     """
