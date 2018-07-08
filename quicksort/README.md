@@ -253,14 +253,16 @@ Due to the nature of this mechanics, it is possible to quick sort the left parti
 
 Quick sort can be distributed into two sub-tasks (quick sort left and right partitions) but can be also be distributed into three sub-tasks (or even more). 
 
-An easy way to think on how to partition is to categorize the partitions. 
+The 3 ways distribution is useful for sorting an array with many duplicates. Another typical problem is to sort by colors (e.g. Dutch National Flag problem).
 
-For example, in a 3 ways distribution, we can categorize 
-* the first partition as a segment containing numbers from n1 to n1<sup>'</sup>
-* the second partition as a segment containing numbers from n2 to n2<sup>'</sup>
-* the third partition as a segment container numbers from n3 to n3<sup>'</sup>.
+<img src="./images/k-ways-partition.png"
+alt="K-Ways Partitioning" width="70%" height="70%" />
 
-The 3 ways distribution is useful for sorting an array with many duplicates.
+[3-way partition code](https://gist.github.com/boulethao/11b0377a56c48e66b17c87072cd44144#file-three-way-partition)
+
+[Ducth national flag partition code](https://gist.github.com/boulethao/11b0377a56c48e66b17c87072cd44144#file-dutch-national-flag-py)
+
+[My attempt to 4-way partition code](https://gist.github.com/boulethao/11b0377a56c48e66b17c87072cd44144#file-four-way-partition-py)
 
 
 #### Memory access not sequential
