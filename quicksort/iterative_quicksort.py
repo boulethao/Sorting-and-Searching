@@ -1,26 +1,45 @@
 #!/usr/bin/env python
 
 class MyStack():
+    """
+    Simple stack implementation
+    """
     def __init__(self):
+        """
+        Initialize the list of items of the stack
+        """
         self.list = []
 
     def push(self, item):
+        """
+        Push an item onto the stack
+        :param item: The item to push
+        :return:
+        """
         self.list.append(item)
 
     def pop(self):
+        """
+        Pop an item from top of the stack
+        :return: The popped item
+        """
         if len(self.list) > 0:
             item = self.list.pop()
             return item
         else:
             raise "ERROR: Stack is empty."
 
-    def isEmpty(self):
+    def is_empty(self):
+        """
+        Check if the stack is empty
+        :return: True if empty / False if not empty
+        """
         return len(self.list) == 0
 
 
 def iterative_quicksort(arr):
     """
-    Iterative quicksort
+    Iterative quick sort
     :param arr: arr to be sorted
     :return:
     """
@@ -34,21 +53,19 @@ def iterative_quicksort(arr):
     stack.push(lo)
     stack.push(hi)
 
-    print (stack.list)
 
-
-    while not stack.isEmpty():
+    while not stack.is_empty():
 
         hi = stack.pop()
         lo = stack.pop()
 
-        #as long as we have at least two elements to sort
+        # as long as we have at least two elements to sort
         if lo < hi:
 
-            #create the partitions
+            # create the partitions
             p = partition(arr, lo, hi)
 
-            #push the left partition indexes
+            # push the left partition indexes
             stack.push(lo)
             stack.push(p-1)
 
@@ -57,28 +74,30 @@ def iterative_quicksort(arr):
             stack.push(hi)
 
 
-def partition(arr, lo, hi):
+def partition(a, lo, hi):
     """
-    Last element pivot partition
-    :param arr:
-    :param lo:
-    :param hi:
-    :return:
+    Last element pivot partition: rearrange elements in the array by putting all the elements < than pivot to the left
+    and elements > than pivot to the right.
+    :param a: array to partition
+    :param lo: lower bound of the array to partition
+    :param hi: higher bound of the array to partition
+    :return: the final pivot position in the array
     """
-    pivot = arr[hi]
+    pivot = a[hi]
     i = lo
     j = lo
 
     while j <= hi:
-        if (arr[j] < pivot):
-            arr[i], arr[j] = arr[j], arr[i]
+        if (a[j] < pivot):
+            a[i], a[j] = a[j], a[i]
             i += 1
         j += 1
 
-    arr[i], arr[hi] = arr[hi], arr[i]
+    a[i], a[hi] = a[hi], a[i]
 
     return i
 
+
 arr = [5, 2, 6, 1, 3, 4]
 iterative_quicksort(arr)
-print (arr)
+print(arr)

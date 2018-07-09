@@ -158,9 +158,6 @@ Choosing a random element as a pivot decrease the chance of getting __O(n<sup>2<
 The quick sort implementation is as simple as implementing a random generator and reusing the partition implementation 
 using the first/last element as a pivot.
 
-Here is an example of an uniform random generator:
-[My Random Generator](./my_random_generator.py)
-
 
 
 #### Picking the median of three elements
@@ -270,6 +267,8 @@ alt="K-Ways Partitioning" width="70%" height="70%" />
 While partitioning, quick sort swaps elements that are not sequentially allocated inside the memory.
 
 ## Additional notes
+
+#### Why quick sort?
 *Why is quick sort the chosen algorithm for standard libraries?*
 
 * Faster in average compared to other algorithms
@@ -281,6 +280,52 @@ While partitioning, quick sort swaps elements that are not sequentially allocate
     - Merge sort requires additional auxiliary space while quick sort runs in-place which is cache friendly.
     - Even if the array for quick sort doesn't fit into cache at the beginning, after several recursion, the smaller sections of the array will fit into cache eventually.
 
+#### Iterative quicksort
+```python
+def iterative_quicksort(arr):
+    stack = Stack()
+    stack.push(0)
+    stack.push(len(arr)-1)
+
+    while not stack.is_empty():
+        hi = stack.pop()
+        lo = stack.pop()
+
+        if lo < hi:
+            p = partition(arr, lo, hi)
+            #left
+            stack.push(lo)
+            stack.push(p-1)
+            #right
+            stack.push(p+1)
+            stack.push(hi)
+```
+N.B. It's even more preferable to push the biggest partition first so we have less items on the stack while working through the partitioning.
+
+[Full code on gist](https://gist.github.com/boulethao/ef29e7e5e19da82c5d64031aa30e2bde#file-iterative_quicksort-py)
+
+#### Find element with rank k (using quick sort type algorithm)
+
+<img src="./images/quickselect.png" width="70%" height="70%" />
+
+
+```python
+def find_kth_element(a, lo, hi, k):    
+    if lo >= hi:
+        return a[lo]
+
+    p = partition(a, lo, hi)
+
+    if (k-1) == p:
+        return a[p]
+
+    if (k - 1) < p:
+        return find_kth_element(a, lo, p-1, k)
+
+    if (k + 1) > p:
+        return find_kth_element(a, p+1, hi, k)
+```
+[Full code on gist](https://gist.github.com/boulethao/a23932ed5c6572fb64ce04bc30e27448#file-kthelement_qsort-py)
 
 
 
