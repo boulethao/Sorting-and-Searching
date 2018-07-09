@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 def dutch_national_flag(arr):
 
     if arr is None or len(arr) <= 1:
